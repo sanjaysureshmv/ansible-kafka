@@ -1,0 +1,7 @@
+---
+- include: kafka-install.yml
+- include: zookeeper-config.yml
+- include: kafka-config.yml
+- include: myid_file.yml
+- include: zookeeper_systemd.yml
+- include: kafka_systemd.yml

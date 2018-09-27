@@ -1,0 +1,6 @@
+---
+- hosts: kafka-servers
+  become: yes
+  roles:
+    - java
+    - kafka

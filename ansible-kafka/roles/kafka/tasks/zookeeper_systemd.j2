@@ -1,0 +1,14 @@
+[Unit]
+Description=Zookeeper
+
+
+[Service]
+Type=simple
+User=root
+Group=root
+Restart=on-failure
+ExecStart={{kafka_dir}}/bin/zookeeper-server-start.sh {{kafka_dir}}/config/zookeeper.properties
+ExecStop={{kafka_dir}}/bin/zookeeper-server-stop.sh {{kafka_dir}}/config/zookeeper.properties
+
+[Install]
+WantedBy=multi-user.target

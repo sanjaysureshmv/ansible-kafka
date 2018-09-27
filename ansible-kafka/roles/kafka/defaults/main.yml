@@ -1,0 +1,8 @@
+---
+kafka_dir: /usr/local/kafka
+zookeeper_data_dir: /opt/zookeeper/data
+kafka_log_dir: /var/log/kafka
+kafka_binary: "http://mirrors.fibergrid.in/apache/kafka/2.0.0/kafka_2.11-2.0.0.tgz "
+kafka1: pltrains-corekafka01.travel.paytm
+kafka2: pltrains-corekafka02.travel.paytm
+kafka3: pltrains-corekafka02.travel.paytm

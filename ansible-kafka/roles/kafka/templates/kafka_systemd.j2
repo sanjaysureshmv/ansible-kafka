@@ -1,0 +1,15 @@
+[Unit]
+Description=Kafka
+After=zookeeper.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+LimitNOFILE=100000
+Restart=on-failure
+ExecStart={{kafka_dir}}/bin/kafka-server-start.sh {{kafka_dir}}/config/server.properties 
+ExecStop={{kafka_dir}}/bin/kafka-server-stop.sh {{kafka_dir}}/config/server.properties
+
+[Install]
+WantedBy=multi-user.target

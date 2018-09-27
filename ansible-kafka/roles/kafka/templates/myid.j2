@@ -1,0 +1,7 @@
+{% if ansible_host == "pltrains-corekafka01.travel.staging" %}
+1
+{% elif ansible_host == "pltrains-corekafka02.travel.staging" %}
+2
+{% else %}
+3
+{% endif %}

@@ -1,0 +1,9 @@
+---
+- name: Create the myid file
+  file:
+    state: touch
+    path: /opt/zookeeper/data/myid
+- name: Insert the correct id's
+  template:
+    src: myid.j2
+    dest: /opt/zookeeper/data/myid

@@ -1,0 +1,11 @@
+---
+- name: Create kafka service file
+  template:
+    src: kafka_systemd.j2
+    dest: /etc/systemd/system/kafka.service
+- name: Restart kafka
+  systemd:
+    name: kafka
+    state: restarted
+    enabled: yes
+    daemon_reload: yes

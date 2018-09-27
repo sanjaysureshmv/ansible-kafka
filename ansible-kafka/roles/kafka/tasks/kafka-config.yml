@@ -1,0 +1,10 @@
+---
+- name: Create the config file-server.properties with multibrokers
+  template:
+    src: server_properties.j2
+    dest: "{{kafka_dir}}/config/server.properties"
+    backup: yes
+- name: setup log4j logging
+  template:
+    src: log4j_properties.j2
+    dest: "{{kafka_dir}}/config/log4j.properties"

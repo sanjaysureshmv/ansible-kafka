@@ -1,0 +1,29 @@
+---
+- name: Create the directory for kafka to be downloaded
+  file:
+    state: directory
+    dest: "{{kafka_dir}}"
+
+- name: Create the data directory for zookeeper
+  file: 
+    state: directory
+    dest: "{{zookeeper_data_dir}}"
+
+- name: Create log files for kafka
+  file: 
+    state: directory
+    dest: "{{kafka_log_dir}}"
+
+- name: Download the binary file of kafka
+  get_url:
+    url: "{{kafka_binary}}"
+    dest: /home/ubuntu/
+    owner: root
+    group: root
+
+- name: Untar the downloaded binary
+  unarchive:
+    src: /home/ubuntu/kafka_2.11-1.1.1.tgz
+    dest: "{{kafka_dir}}"
+    remote_src: yes
+    extra_opts: [--strip-components=1]

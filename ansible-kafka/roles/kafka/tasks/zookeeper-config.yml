@@ -1,0 +1,6 @@
+---
+- name: change the config of zookeeper.properties
+  template:
+    src: zookeeper_properties.j2
+    dest: "{{kafka_dir}}/config/zookeeper.properties"
+    backup: yes

@@ -1,0 +1,11 @@
+---
+- name: create a service file for zookeeper
+  template:
+    src: zookeeper_systemd.j2
+    dest: /etc/systemd/system/zookeeper.service
+- name: Restart zookeeper
+  systemd:
+    name: zookeeper
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
